@@ -5,21 +5,28 @@ import {
 } from 'react-native';
 
 import Style from './Style';
+import Button from './Button';
 
 export default class ToolBar extends Component {
-    render() {
-        return (
-            <ToolbarAndroid
-                style={Style.toolbar}
-                logo={require('../resources/toolbar.png')}
-                title="Marvel"
-                onActionSelected={this.onActionSelected} />
-        )
+    constructor(props) {
+        super(props);
     }
 
-    onActionSelected(position) {
-        if (position === 0) { // index of 'Settings'
-            //showSettings();
-        }
+    render() {
+        return (
+            <View>
+                <Button
+                    onPress={() => {
+                        this.props.openDrawer();
+                    }}
+                    text="Close Drawer"/>
+
+                <ToolbarAndroid
+                    style={Style.toolbar}
+                    logo={require('../resources/toolbar.png')}
+                    title="Marvel"
+                    onActionSelected={this.onActionSelected} />
+            </View>
+        )
     }
 }

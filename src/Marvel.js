@@ -35,7 +35,9 @@ class Marvel extends Component {
                 content={controlPanel}>
 
                 <View style={Style.toolBarContainer}>
-                    <ToolBar />
+                    <ToolBar openDrawer={() => {
+                        this.openControlPanel();
+                    }}/>
                 </View>
                 <View style={Style.container}>
                     <CharacterList />
@@ -48,6 +50,7 @@ class Marvel extends Component {
     closeControlPanel = () => {
         this._drawer.close()
     };
+
     openControlPanel = () => {
         this._drawer.open()
     };

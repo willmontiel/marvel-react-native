@@ -70,11 +70,6 @@ var Style = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
 
-
-
-
-
-    //Eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeexample
     //Drawer Menu
     scrollView: {
         backgroundColor: '#B99BC4',
@@ -82,18 +77,20 @@ var Style = StyleSheet.create({
 
     drawerMenu: {
         flex: 1,
-        backgroundColor: '#b5b5b5',
+        padding: 10,
+        backgroundColor: '#000000',
     },
 
     controlPanelText: {
         color: 'white',
     },
     
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 25,
+    itemDrawerMenu: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        padding: 5,
     },
+
     controlPanelWelcome: {
         fontSize: 20,
         textAlign: 'center',
@@ -102,7 +99,7 @@ var Style = StyleSheet.create({
         fontWeight: 'bold',
     },
 
-    
+
     categoryLabel: {
         fontSize: 15,
         textAlign: 'left',
