@@ -1,0 +1,1 @@
+import Marvel from './src/Marvel';
