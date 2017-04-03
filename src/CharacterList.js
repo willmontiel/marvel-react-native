@@ -99,8 +99,6 @@ export default class CharacterList extends Component {
     }
 
     fetchData() {
-        alert(this.getUrl(this.state.offset, this.state.query));
-        /*
         fetch(this.getUrl(this.state.offset, this.state.query))
             .then((response) => response.json())
             .then((responseData) => {
@@ -110,7 +108,6 @@ export default class CharacterList extends Component {
                 });
             })
             .done();
-        */
     }
 
     getUrl(offset, query) {

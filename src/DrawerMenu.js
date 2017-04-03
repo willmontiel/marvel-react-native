@@ -7,6 +7,7 @@ import {
 
 import Style from './Style';
 import Button from './Button';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class DrawerMenu extends Component {
   constructor(props) {
@@ -14,9 +15,9 @@ export default class DrawerMenu extends Component {
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
       dataSource: ds.cloneWithRows([
-        {id: 1, name: 'Inicio'},
-        {id: 2, name: 'Recompensas'},
-        {id: 3, name: 'Cerrar sesión'},
+        { id: 1, name: 'Inicio' },
+        { id: 2, name: 'Recompensas' },
+        { id: 3, name: 'Cerrar sesión' },
       ])
     };
   }
@@ -27,21 +28,29 @@ export default class DrawerMenu extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderNavigationList}
-          style={Style.listView} />
+          style={Style.drawerMenuListView} />
 
-        <Button
+
+        <Button style={Style.button}
           onPress={() => {
             this.props.closeDrawer();
           }}
-          text="Close Drawer"
-        />
+          text="Regresar" />
       </View>
     )
   }
 
   renderNavigationList(item) {
     return (
-      <Text style={Style.itemDrawerMenu}>{item.name}</Text>
+      <Text style={Style.itemDrawerMenu}
+        //onPress={this.onActionClicked(item.id)}
+        >
+        {item.name}
+      </Text>
     );
+  }
+
+  onActionClicked(index) {
+    alert('lala' + index);
   }
 }
